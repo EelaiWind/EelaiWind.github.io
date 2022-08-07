@@ -1,1 +1,151 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 5px 12px 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  height: 42px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+</style>
+</head>
+<body>
+
+<script>
+function myFunction() {
+  const input_name = document.getElementById("myInput").value.trim();
+  const table = document.getElementById("myTable");
+  const rows = table.getElementsByTagName("tr");
+  const warning = document.getElementById("warning");
+  var found = false;
+  for (var i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    var td = row.getElementsByTagName("td")[2];
+    if (td && row.id != warning.id) {
+      const txtValue = td.textContent || td.innerText;
+      if (!input_name || txtValue.indexOf(input_name) >= 0) {
+        row.style.display = "";
+        found = true;
+      } else {
+        row.style.display = "none";
+      }
+    }
+  }
+  if (found) {
+    warning.style.display = "none";
+  } else {
+    warning.style.display = "";
+  }
+}
+</script>
+
+<h2>慶生餐會座位</h2>
+<input type="text" id="myInput" oninput="myFunction()" placeholder="搜尋姓名"/>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:15%;">桌次</th>
+    <th style="width:15%;">編號</th>
+    <th style="width:70%;">姓名</th>
+  </tr>
+  <tr id="warning" style="display: none;">
+    <td>?</td>
+    <td>?</td>
+    <td>查無此人</td>
+  </tr>
+  <tr><td>1</td><td>1</td><td>潘朝智</td></tr>
+  <tr><td>1</td><td>2</td><td>徐章哲</td></tr>
+  <tr><td>1</td><td>3</td><td>邱主文</td></tr>
+  <tr><td>1</td><td>4</td><td>符基強</td></tr>
+  <tr><td>1</td><td>5</td><td>曾有慶</td></tr>
+  <tr><td>1</td><td>6</td><td>蘇偉筌</td></tr>
+  <tr><td>1</td><td>7</td><td>林昆達</td></tr>
+  <tr><td>1</td><td>8</td><td>徐念陽</td></tr>
+  <tr><td>1</td><td>9</td><td>簡上下</td></tr>
+  <tr><td>1</td><td>10</td><td>張勝雄</td></tr>
+
+  <tr><td>2</td><td>1</td><td>傅孟煒</td></tr>
+  <tr><td>2</td><td>2</td><td>曾憲明</td></tr>
+  <tr><td>2</td><td>3</td><td>吳光蔚</td></tr>
+  <tr><td>2</td><td>4</td><td>陳俊誠</td></tr>
+  <tr><td>2</td><td>5</td><td>陳文德</td></tr>
+  <tr><td>2</td><td>6</td><td>魏煥昌</td></tr>
+  <tr><td>2</td><td>7</td><td>蔡覲城</td></tr>
+  <tr><td>2</td><td>8</td><td>姜仁橋</td></tr>
+  <tr><td>2</td><td>9</td><td>林世昌</td></tr>
+  <tr><td>2</td><td>10</td><td>戴仁貴</td></tr>
+
+  <tr><td>3</td><td>1</td><td>許兆甫</td></tr>
+  <tr><td>3</td><td>2</td><td>王培琦</td></tr>
+  <tr><td>3</td><td>3</td><td>林錫鈞</td></tr>
+  <tr><td>3</td><td>4</td><td>劉國賢</td></tr>
+  <tr><td>3</td><td>5</td><td>賴耀宗</td></tr>
+  <tr><td>3</td><td>6</td><td>郭彭賢</td></tr>
+  <tr><td>3</td><td>7</td><td>吳文華</td></tr>
+  <tr><td>3</td><td>8</td><td>林進福</td></tr>
+  <tr><td>3</td><td>9</td><td>呂宏鈿</td></tr>
+  <tr><td>3</td><td>10</td><td>空</td></tr>
+
+  <tr><td>4</td><td>1</td><td>胡埈訊</td></tr>
+  <tr><td>4</td><td>2</td><td>名宗勳</td></tr>
+  <tr><td>4</td><td>3</td><td>蘇胡寬</td></tr>
+  <tr><td>4</td><td>4</td><td>李蒂</td></tr>
+  <tr><td>4</td><td>5</td><td>劉祐誠</td></tr>
+  <tr><td>4</td><td>6</td><td>林泰山</td></tr>
+  <tr><td>4</td><td>7</td><td>胡元鐘</td></tr>
+  <tr><td>4</td><td>8</td><td>劉志銘</td></tr>
+  <tr><td>4</td><td>9</td><td>鍾金國</td></tr>
+  <tr><td>4</td><td>10</td><td>湯盛旭</td></tr>
+
+  <tr><td>5</td><td>1</td><td>林俊瑋</td></tr>
+  <tr><td>5</td><td>2</td><td>鍾欣航</td></tr>
+  <tr><td>5</td><td>3</td><td>陳君安</td></tr>
+  <tr><td>5</td><td>4</td><td>郭敬琇</td></tr>
+  <tr><td>5</td><td>5</td><td>潘昱昀</td></tr>
+  <tr><td>5</td><td>6</td><td>陳義旺</td></tr>
+  <tr><td>5</td><td>7</td><td>楊元傑</td></tr>
+  <tr><td>5</td><td>8</td><td>楊仲庭</td></tr>
+  <tr><td>5</td><td>9</td><td>嚴智信</td></tr>
+  <tr><td>5</td><td>10</td><td>何自強</td></tr>
+
+  <tr><td>6</td><td>1</td><td>陳鴻鎰</td></tr>
+  <tr><td>6</td><td>2</td><td>劉淵龍</td></tr>
+  <tr><td>6</td><td>3</td><td>陳宥丞</td></tr>
+  <tr><td>6</td><td>4</td><td>羅濟文</td></tr>
+  <tr><td>6</td><td>5</td><td>呂炎鍾</td></tr>
+  <tr><td>6</td><td>6</td><td>毛濟時</td></tr>
+  <tr><td>6</td><td>7</td><td>林昆華</td></tr>
+  <tr><td>6</td><td>8</td><td>戴秉鈞</td></tr>
+  <tr><td>6</td><td>9</td><td>林麗玲</td></tr>
+  <tr><td>6</td><td>10</td><td>空</td></tr>
+</table>
+</body>
+</html>
